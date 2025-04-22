@@ -34,6 +34,8 @@ The histogram below demonstrates that applying the Box-Cox method resulted in mo
 
 Figure below reveals an increasing trend with distinct 12-month seasonality and some residual seasonal patterns in the random component, indicating need for a model addressing both trend and seasonality.
 
+<img src="docs/1.png" width="500" />
+
 #### 2.4 Model Building
 
 Dickey-Fuller testing ($H_0: | \phi| = 1; H_1: |\phi| < 1)$ yielded $p$ = 0.01 after first differencing ($d = 1$), confirming stationarity. Figure 5 shows gradually decaying ACF, PACF cutting off after lag 2, and pseudo-sinusoidal ACF patterns suggesting residual seasonality.
