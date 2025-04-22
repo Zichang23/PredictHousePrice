@@ -24,7 +24,7 @@ d. What are the predictions for future changes in housing prices?
 
 #### 2.1 ACF Plot and PACF Plot
 
-The ACF plot (below) shows gradual tailing off with many significant lags, while the PACF plot cuts off after lag 1, suggesting an AR(1) model is appropriate for this data.
+The ACF plot (Figure 1) shows gradual tailing off with many significant lags, while the PACF plot cuts off after lag 1, suggesting an AR(1) model is appropriate for this data.
 
 <img src="docs/2.png" width="400" />
 
@@ -32,26 +32,27 @@ The ACF plot (below) shows gradual tailing off with many significant lags, while
 
 Initial analysis revealed non-constant variance with standard deviations of 28558 and 41171 for the first and second halves of the dataset, respectively. After applying a Box-Cox transformation, standard deviations became 0.0360 and 0.0327, satisfying the constant variance assumption.
 
-The histogram below demonstrates that applying the Box-Cox method resulted in modest improvements to the data's normality distribution.
+The histogram in Figure 2 demonstrates that applying the Box-Cox method resulted in modest improvements to the data's normality distribution.
 
 <img src="docs/3.png" width="400" />
 
 #### 2.3 Structural Regression Model
 
-Figure below reveals an increasing trend with distinct 12-month seasonality and some residual seasonal patterns in the random component, indicating need for a model addressing both trend and seasonality.
+Figure 3 reveals an increasing trend with distinct 12-month seasonality and some residual seasonal patterns in the random component, indicating need for a model addressing both trend and seasonality.
 
 <img src="docs/4.png" width="400" />
-
-<!--
-We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (below) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
-
-<img src="docs/2.png" width="400" />
-
---!>
 
 #### 2.4 Model Building
 
 Dickey-Fuller testing ($H_0: | \phi| = 1; H_1: |\phi| < 1)$ yielded $p$ = 0.01 after first differencing ($d = 1$), confirming stationarity. Figure 5 shows gradually decaying ACF, PACF cutting off after lag 2, and pseudo-sinusoidal ACF patterns suggesting residual seasonality.
+
+Figure 5 shows gradually decaying ACF, PACF cutting off after lag 2, and pseudo-sinusoidal patterns in the ACF suggesting residual seasonality.
+
+<img src="docs/5.png" width="400" />
+
+We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (below) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
+
+<img src="docs/6.png" width="400" />
 
 #### 2.5 Multiple Linear Regression
 
