@@ -90,6 +90,8 @@ Table 3 shows that small p-values for Month, CPI, and Interest Rate indicate the
 
 Figure 7 displays a five-step forecast from 2013 to 2023, showing the predicted house price (red line) remains flat, suggesting stability in Dallas house prices from April to August 2023.
 
+<img src="docs/7.png" width="400" />
+
 ### 3. Conclusion
 
 #### 3.1 Summary for Dataset and Data Analysis
