@@ -50,13 +50,45 @@ Figure 5 shows gradually decaying ACF, PACF cutting off after lag 2, and pseudo-
 
 <img src="docs/5.png" width="400" />
 
-We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (below) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
+We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (Figure 6) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
 
 <img src="docs/6.png" width="400" />
 
 #### 2.5 Multiple Linear Regression
 
+To check the effect of Month, CPI, and Interest Rate on the house price, we fit a multiple linear regression model. The model can be written as:
+
+$$ X_t = \beta_0 + \beta_1 Z_{t1} + \beta_2 Z_{t2} + \beta_3 Z_{t3} + \epsilon_t$$
+
+Notations:
+
+$X_t$: monthly house prices at time point $t$
+
+$t$: year from 2013 to 2023
+
+$\beta_0$: intercept
+
+$\beta_1$: coefficient for Month
+
+$\beta_2$: coefficient for CPI
+
+$\beta_3$: coefficient for interest rate
+
+$Z_{t1}$: Month
+
+$Z_{t2}$: CPI
+
+$Z_{t3}$: Interest Rate
+
+$\epsilon_t$: white noise time series with mean 0 and variance $\sigma^2$
+
+Table 3 shows that small p-values for Month, CPI, and Interest Rate indicate these factors significantly affect Dallas house prices. Positive coefficients suggest house prices increase with these factors.
+
+<img src="docs/T3.png" width="400" />
+
 #### 2.6 Forecasting
+
+Figure 7 displays a five-step forecast from 2013 to 2023, showing the predicted house price (red line) remains flat, suggesting stability in Dallas house prices from April to August 2023.
 
 ### 3. Conclusion
 
