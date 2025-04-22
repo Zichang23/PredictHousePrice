@@ -4,6 +4,8 @@
 
 This project examines Dallas housing market fluctuations over a decade (2013-2023), identifying key price drivers and forecasting future trends.
 
+<img src="docs/1.png" width="400" />
+
 #### 1.1 Data
 
 Data was collected from three sources: Zillow.com [Dallas monthly house prices](https://www.zillow.com/research/data/), Federal Reserve Bank of St. Louis [CPI](https://fred.stlouisfed.org/series/MORTGAGE30U), and OECD [monthly interest rates](https://stats.oecd.org/index.aspx?queryid=86#). The dataset contains 123 observations spanning January 2013 to March 2023, with three variables: Dallas monthly house prices, CPI, and monthly interest rates.
@@ -24,17 +26,28 @@ d. What are the predictions for future changes in housing prices?
 
 The ACF plot (below) shows gradual tailing off with many significant lags, while the PACF plot cuts off after lag 1, suggesting an AR(1) model is appropriate for this data.
 
+<img src="docs/2.png" width="400" />
+
 #### 2.2 Data Transformation
 
 Initial analysis revealed non-constant variance with standard deviations of 28558 and 41171 for the first and second halves of the dataset, respectively. After applying a Box-Cox transformation, standard deviations became 0.0360 and 0.0327, satisfying the constant variance assumption.
 
 The histogram below demonstrates that applying the Box-Cox method resulted in modest improvements to the data's normality distribution.
 
+<img src="docs/3.png" width="400" />
+
 #### 2.3 Structural Regression Model
 
 Figure below reveals an increasing trend with distinct 12-month seasonality and some residual seasonal patterns in the random component, indicating need for a model addressing both trend and seasonality.
 
-<img src="docs/1.png" width="500" />
+<img src="docs/4.png" width="400" />
+
+<--!
+We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (below) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
+
+<img src="docs/2.png" width="400" />
+
+--!>
 
 #### 2.4 Model Building
 
