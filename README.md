@@ -96,4 +96,16 @@ Figure 7 displays a five-step forecast from 2013 to 2023, showing the predicted 
 
 #### 3.1 Summary for Dataset and Data Analysis
 
+Our dataset includes monthly house prices in Dallas, CPI, and Interest Rate from January 2013 to March 2023, totaling 123 observations. We applied transformations to meet constant variance assumptions and fit a structural regression model to uncover trends and seasonal patterns. Using the Dickey-Fuller test, we determined the differencing order for the trend component. After fitting a seasonal ARIMA model, we performed diagnostics with residual plots, ACF plots, and the Ljung-Box test, then used a five-step forecast to predict house price changes.
+
 #### 3.2 Comments for Research Questions
+
+Based on our analysis, we address our research questions:
+
+a. Dallas house prices increased overall from 2013 to 2023, with seasonal patterns every 12 months suggesting seasonal influences.
+
+b. We propose a seasonal ARIMA model $(p = 1, d = 1, q = 2) \times (P = 0, D = 1, Q = 1)_{12}$ with interest rate as a regressor. Diagnostics confirm residuals follow a white noise time series, supporting the model's suitability.
+
+c. A five-step ahead forecast predicts stable Dallas house prices from April to August 2023.
+
+d. Linear regression reveals Month, CPI, and Interest Rate significantly affect house prices, with positive coefficients indicating a positive relationship.
