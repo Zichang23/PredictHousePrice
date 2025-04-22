@@ -42,7 +42,7 @@ Figure below reveals an increasing trend with distinct 12-month seasonality and 
 
 <img src="docs/4.png" width="400" />
 
-<--!
+<!--
 We fitted a seasonal ARIMA(1,1,2)×(0,1,1)₁₂ with Interest Rate as a covariate. Residual analysis (below) shows constant variance except in 2014, white noise characteristics in the ACF plot, and normal distribution in the QQ plot with one outlier. Ljung-Box test p-values mostly exceed significance levels, confirming residual independence and model adequacy.
 
 <img src="docs/2.png" width="400" />
