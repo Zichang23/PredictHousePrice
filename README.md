@@ -10,6 +10,8 @@ This project examines Dallas housing market fluctuations over a decade (2013-202
 
 Data was collected from three sources: Zillow.com [Dallas monthly house prices](https://www.zillow.com/research/data/), Federal Reserve Bank of St. Louis [CPI](https://fred.stlouisfed.org/series/MORTGAGE30U), and OECD [monthly interest rates](https://stats.oecd.org/index.aspx?queryid=86#). The dataset contains 123 observations spanning January 2013 to March 2023, with three variables: Dallas monthly house prices, CPI, and monthly interest rates.
 
+<img src="docs/T1.png" width="400" />
+
 #### 1.2 Research Questions
 
 a. What are the trends and seasonal patterns in Dallas housing prices over time?
@@ -31,6 +33,8 @@ The ACF plot (Figure 1) shows gradual tailing off with many significant lags, wh
 #### 2.2 Data Transformation
 
 Initial analysis revealed non-constant variance with standard deviations of 28558 and 41171 for the first and second halves of the dataset, respectively. After applying a Box-Cox transformation, standard deviations became 0.0360 and 0.0327, satisfying the constant variance assumption.
+
+<img src="docs/T2.png" width="400" />
 
 The histogram in Figure 2 demonstrates that applying the Box-Cox method resulted in modest improvements to the data's normality distribution.
 
