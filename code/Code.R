@@ -1,7 +1,3 @@
-# STAT6363 Time Series Final Project
-# Dallas Housing Prices Analysis
-# Zichang Xiang
-
 # load pacakages
 library(forecast)
 library(tseries)
