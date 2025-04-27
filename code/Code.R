@@ -1,11 +1,14 @@
 # load pacakages
 library(forecast)
 library(tseries)
+
 # read in data
 house<- get(load(file="House.RData"))
+
 # overview of data
 head(house)
 knitr::kable(house[,1:6], caption = "Overview of House Price Dataset")
+
 # change dataset to long format
 house2 <- t(house[,-1])
 colnames(house2) <- c("Dallas","CPI", "Interest")
@@ -46,12 +49,16 @@ acf1(house4, pacf = T, main="PACF Plot")
 # fit structural regression model
 str.reg = decompose(house4)
 plot(str.reg)
+
 # seasonal period s
 s = length(str.reg$figure)
+
 # trend differencing the time series(d=1)
 yt = diff(house4, lag=1, differences = 1)
+
 # Dickey-Fuller test
 adf.test(yt)
+
 # seasonal differencing the time series (D=1)
 zt = diff(yt, lag=s)
 
